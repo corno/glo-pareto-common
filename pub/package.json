@@ -1,0 +1,26 @@
+{
+  "author": "Corno",
+  "files": [
+    "dist",
+    "data"
+  ],
+  "keywords": [],
+  "main": "./dist/index.js",
+  "bugs": {
+    "url": "https://github.com/corno/pareto/issues"
+  },
+  "description": "",
+  "homepage": "https://github.com/corno/pareto#readme",
+  "license": "ISC",
+  "name": "glo-pareto-common",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corno/glo-pareto-common.git"
+  },
+  "types": "dist/index.d.ts",
+  "version": "0.1.0",
+  "dependencies": {
+    "pareto-core-types": "^0.10.0"
+  },
+  "content-fingerprint": "631508a6550aa17d96208c87a8b60da41ce1751d"
+}
