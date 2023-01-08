@@ -6,6 +6,7 @@ import {
     type,
     reference as ref,
     boolean as bln,
+    number as nr,
     nested,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
@@ -25,7 +26,10 @@ export const project: NProject.TProject = {
                     'imports': wd({
                     }),
                     'types': types({
-                        "Path": nested(str())
+                        "Path": nested(str()),
+                        "String": str(),
+                        "Number": nr(),
+                        "Boolean": bln(),
                     }),
                     'functions': wd({
                     }),
