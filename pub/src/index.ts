@@ -1,3 +1,2 @@
-export * from "./algorithms/algorithms.p"
-export * from "./types/types.p"
-
+export { $a } from "./modules/main"
+export * from "./modules/main/api"
