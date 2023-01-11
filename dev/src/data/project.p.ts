@@ -23,25 +23,21 @@ export const project: NProject.TProject = {
         "main": {
             'definition': {
                 "glossary": {
-                    'imports': wd({
-                    }),
+                    'imports': wd({}),
                     'types': types({
                         "Path": nested(str()),
                         "String": str(),
                         "Number": nr(),
                         "Boolean": bln(),
                     }),
-                    'functions': wd({
-                    }),
-                    'callbacks': wd({
-                    }),
+                    'functions': wd({}),
                     'interfaces': wd({}),
+                    'callbacks': wd({}),
+                    'pipes': wd({}),
                 },
                 "api": {
-                    'imports': wd({
-                    }),
-                    'algorithms': wd({
-                    })
+                    'imports': wd({}),
+                    'algorithms': wd({})
                 },
             },
             'implementation': {}
