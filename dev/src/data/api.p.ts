@@ -12,7 +12,7 @@ import {
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/api"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
@@ -20,14 +20,17 @@ const d = pr.wrapRawDictionary
 export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
         'imports': d({}),
-        'types': types({
-            "Path": nested(str()),
-            "String": str(),
-            "Number": nr(),
-            "Boolean": bln(),
-        }),
+        'namespace': {
+            'types': types({
+                "Path": nested(str()),
+                "String": str(),
+                "Number": nr(),
+                "Boolean": bln(),
+            }),
+            'interfaces': d({}),
+
+        },
         'functions': d({}),
-        'interfaces': d({}),
         'callbacks': d({}),
         'pipes': d({}),
     },
