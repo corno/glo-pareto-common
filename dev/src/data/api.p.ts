@@ -6,6 +6,7 @@ import {
     boolean as bln,
     number as nr,
     nested,
+    null_,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
@@ -20,10 +21,11 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         'imports': d({}),
         'namespace': {
             'types': types({
+                "Boolean": bln(),
+                "Null": null_(),
+                "Number": nr(),
                 "Path": nested(str()),
                 "String": str(),
-                "Number": nr(),
-                "Boolean": bln(),
             }),
             'interfaces': d({}),
 
