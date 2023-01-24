@@ -7,6 +7,7 @@ import {
     number as nr,
     nested,
     null_,
+    typeReference,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
@@ -30,9 +31,14 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             'interfaces': d({}),
 
         },
-        'functions': d({}),
-        'callbacks': d({}),
-        'pipes': d({}),
+        'functions': d({
+            "Log": {
+                'return type': ['nothing', null],
+                'data': typeReference("String"),
+                'managed input interface': null,
+                'output interface': null,
+            },
+        }),
     },
     'api': {
         'imports': d({}),
