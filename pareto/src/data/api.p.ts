@@ -21,6 +21,7 @@ const d = pr.wrapRawDictionary
 export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
         'imports': d({}),
+        'parameters': d({}),
         'namespace': {
             'types': types({
                 "Boolean": bln(),
