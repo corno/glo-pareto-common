@@ -8,6 +8,7 @@ import {
     nested,
     null_,
     typeReference,
+    procedure,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
@@ -38,6 +39,8 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 'managed input interface': null,
                 'output interface': null,
             },
+
+            "Signal": procedure(typeReference("Null"))
         }),
     },
     'api': {
