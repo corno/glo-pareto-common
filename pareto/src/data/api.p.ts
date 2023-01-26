@@ -22,7 +22,6 @@ export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
         'imports': d({}),
         'parameters': d({}),
-        'namespace': {
             'types': types({
                 "Boolean": bln(),
                 "Null": null_(),
@@ -31,8 +30,6 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 "String": str(),
             }),
             'interfaces': d({}),
-
-        },
         'functions': d({
             "Log": {
                 'return type': ['nothing', null],
