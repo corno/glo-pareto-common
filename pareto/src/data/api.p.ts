@@ -22,23 +22,18 @@ export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
         'imports': d({}),
         'parameters': d({}),
-            'types': types({
-                "Boolean": bln(),
-                "Null": null_(),
-                "Number": nr(),
-                "Path": nested(str()),
-                "String": str(),
-            }),
-            'interfaces': d({}),
+        'templates': d({}),
+        'types': types({
+            "Boolean": bln(),
+            "Null": null_(),
+            "Number": nr(),
+            "Path": nested(str()),
+            "String": str(),
+        }),
+        'interfaces': d({}),
         'functions': d({
-            "Log": {
-                'return type': ['nothing', null],
-                'data': typeReference("String"),
-                'managed input interface': null,
-                'output interface': null,
-            },
-
-            "Signal": procedure(typeReference("Null"))
+            "Log": procedure(typeReference("String")),
+            "Signal": procedure(typeReference("Null")),
         }),
     },
     'api': {
