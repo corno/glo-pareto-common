@@ -1,34 +1,43 @@
 import * as pr from 'pareto-core-raw'
+
 import {
-    externalReference as er,
-    string as str,
-    reference as ref,
-    boolean as bln,
-    number as nr,
     nested,
     null_,
     typeReference,
     procedure,
+    boolean,
+    string,
+    number,
+    types,
+    _function,
+    taggedUnion,
+    parameter,
+    group,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
-import { dictionary, group, member, taggedUnion, types, _function } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
-
 
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
-
 export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
         'imports': d({}),
         'parameters': d({}),
-        'templates': d({}),
+        'templates': d({
+            "Optional": {
+                'parameters': d({ "Type": {}, }),
+                'type': taggedUnion({
+                    "set": parameter("Type"),
+                    "not set": group({}),
+                })
+            }
+        }),
         'types': types({
-            "Boolean": bln(),
+            "Boolean": boolean(),
             "Null": null_(),
-            "Number": nr(),
-            "Path": nested(str()),
-            "String": str(),
+            "Number": number(),
+            "Path": nested(string()),
+            "String": string(),
         }),
         'interfaces': d({}),
         'functions': d({
