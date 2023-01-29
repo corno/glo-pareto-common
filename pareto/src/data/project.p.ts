@@ -7,11 +7,21 @@ const d = pr.wrapRawDictionary
 import { $ as api } from "./api.p"
 
 export const $: mproject.TProject = {
-    'type': ['glossary',  {}],
+    'name': "glo-pareto-common",
+
+    'author': "Corno",
+    'description': "a pareto wrapper around the 'path' library of NodeJS",
+    'license': "ISC",
+
+
+
+    'type': ['glossary', {}],
     'modules': d({
         "main": {
             'definition': api,
         },
     }),
-    'main': "main"
+    'main': "main",
+    'pubdependencies': d({}),
+    'testdependencies': d({}),
 }

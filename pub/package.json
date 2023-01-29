@@ -1,26 +1,20 @@
 {
-  "author": "Corno",
-  "files": [
-    "dist",
-    "data"
-  ],
-  "keywords": [],
-  "main": "./dist/index.js",
-  "bugs": {
-    "url": "https://github.com/corno/pareto/issues"
-  },
-  "description": "",
-  "homepage": "https://github.com/corno/pareto#readme",
-  "license": "ISC",
   "name": "glo-pareto-common",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/corno/glo-pareto-common.git"
-  },
-  "types": "dist/index.d.ts",
-  "version": "0.9.0",
+  "author": "Corno",
+  "license": "ISC",
+  "description": "a pareto wrapper around the 'path' library of NodeJS",
   "dependencies": {
     "pareto-core-types": "^0.10.0"
   },
-  "content-fingerprint": "b56f1871b7e4a872b0e1afce68fd8bb9e53a6977"
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/corno/glo-pareto-common.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "0.0.0",
+  "content-fingerprint": "ecaa0de293ea4cee64a548fbc86367c1159926e9"
 }
