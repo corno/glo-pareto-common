@@ -4,18 +4,17 @@ import {
     nested,
     null_,
     typeReference,
-    procedure,
     boolean,
     string,
     number,
     types,
-    _function,
     taggedUnion,
     parameter,
     group,
-} from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
+    func,
+} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
-import * as mglossary from "lib-pareto-typescript-project/dist/modules/glossary"
+import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
 const d = pr.wrapRawDictionary
 
@@ -40,7 +39,7 @@ export const $: mglossary.TGlossary = {
     }),
     'interfaces': d({}),
     'functions': d({
-        "Log": procedure(typeReference("String")),
-        "Signal": procedure(typeReference("Null")),
+        "Log": func(typeReference("String"), null, null, null),
+        "Signal": func(typeReference("Null"), null, null, null),
     }),
 }

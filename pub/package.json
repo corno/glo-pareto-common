@@ -16,5 +16,5 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "version": "0.0.0",
-  "content-fingerprint": "1a4c36a7542512461fa002a3bd579394f7222df9"
+  "content-fingerprint": "b56eb65d625763849c997da339454b48a1ef56c2"
 }
