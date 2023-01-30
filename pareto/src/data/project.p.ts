@@ -4,7 +4,7 @@ import * as mproject from "lib-pareto-typescript-project/dist/modules/project"
 
 const d = pr.wrapRawDictionary
 
-import { $ as api } from "./api.p"
+import { $ as glossary } from "./glossary.p"
 
 export const $: mproject.TProject = {
     'name': "glo-pareto-common",
@@ -13,15 +13,8 @@ export const $: mproject.TProject = {
     'description': "a pareto wrapper around the 'path' library of NodeJS",
     'license': "ISC",
 
-
-
-    'type': ['glossary', {}],
-    'modules': d({
-        "main": {
-            'definition': api,
-        },
-    }),
-    'main': "main",
     'pubdependencies': d({}),
-    'testdependencies': d({}),
+    'type': ['glossary', {
+        'glossary': glossary
+    }],
 }
