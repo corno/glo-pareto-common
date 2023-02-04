@@ -4,7 +4,7 @@ import * as mproject from "lib-pareto-typescript-project/dist/submodules/project
 
 const d = pr.wrapRawDictionary
 
-import { $ as glossary } from "./glossary.p"
+import { $ as glossary } from "./glossary.data"
 
 export const $: mproject.TProject = {
     'author': "Corno",
