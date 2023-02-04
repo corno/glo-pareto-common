@@ -12,6 +12,7 @@ import {
     parameter,
     group,
     func,
+    method,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -37,7 +38,14 @@ export const $: mglossary.TGlossary = {
         "Path": nested(string()),
         "String": string(),
     }),
-    'interfaces': d({}),
+    'interfaces': d({
+        "StringStreamConsumer": ['group', {
+            'members': d({
+                "onData": method(typeReference("String")),
+                "onEnd": method(null),
+            }),
+        }],
+    }),
     'functions': d({
         "Log": func(typeReference("String"), null, null, null),
         "Signal": func(typeReference("Null"), null, null, null),
