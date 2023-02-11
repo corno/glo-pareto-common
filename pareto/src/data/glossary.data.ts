@@ -9,34 +9,25 @@ import {
     number,
     types,
     taggedUnion,
-    parameter,
     group,
     func,
     method,
+    type,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
 const d = pr.wrapRawDictionary
 
-export const $: mglossary.TGlossary = {
+export const $: mglossary.T.Glossary<string> = {
     'imports': d({}),
     'parameters': d({}),
-    'templates': d({
-        "Optional": {
-            'parameters': d({ "Type": {}, }),
-            'type': taggedUnion({
-                "set": parameter("Type"),
-                "not set": group({}),
-            })
-        }
-    }),
-    'types': types({
-        "Boolean": boolean(),
-        "Null": null_(),
-        "Number": number(),
-        "Path": nested(string()),
-        "String": string(),
+    'types': d({
+        "Boolean": type(boolean()),
+        "Null": type(null_()),
+        "Number": type(number()),
+        "Path": type(nested(string())),
+        "String": type(string()),
     }),
     'interfaces': d({
         "StringStreamConsumer": ['group', {

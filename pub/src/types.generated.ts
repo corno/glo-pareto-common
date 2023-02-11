@@ -1,21 +1,20 @@
 import * as pt from 'pareto-core-types'
 
 
-export namespace VOptional {
+export namespace T {
     
-    export namespace Onot__set {}
-    export type Onot__set<AType> = {}
+    export type Boolean = boolean
+    
+    export type Null = null
+    
+    export type Number = number
+    
+    export namespace Path {
+        
+        export type N = string
+    }
+    
+    export type Path = pt.Nested<string>
+    
+    export type String = string
 }
-export type VOptional<AType> = 
-    | ['not set', VOptional.Onot__set<AType>]
-    | ['set', AType]
-
-export type MOptional<AType> = VOptional<AType>
-export type UBoolean = boolean
-export type UNull = null
-export type UNumber = number
-
-export namespace GPath {}
-export type GPath = pt.Nested<string>
-export type UPath = GPath
-export type UString = string
