@@ -4,7 +4,7 @@
   "description": "a pareto wrapper around the 'path' library of NodeJS",
 
   "dependencies": {
-    "pareto-core-types": "^0.10.0"
+    "pareto-core-types": "^0.0.0"
   },
   "files": [
     "dist"
