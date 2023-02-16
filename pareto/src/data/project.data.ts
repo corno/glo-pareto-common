@@ -11,7 +11,7 @@ export const $: mproject.T.Project = {
     'description': "a pareto wrapper around the 'path' library of NodeJS",
     'license': "ISC",
 
-    'pubdependencies': d({}),
+    'dependencies': d({}),
     'type': ['glossary', {
         'glossary': glossary
     }],
