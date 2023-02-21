@@ -20,6 +20,33 @@ export namespace T {
         readonly 'dictionary': pt.Dictionary<AType>
     }
     
+    export namespace AnnotatedKey {
+        
+        export type annotation<AAnnotation> = AAnnotation
+        
+        export type key<AAnnotation> = string
+    }
+    
+    export type AnnotatedKey<AAnnotation> = {
+        readonly 'annotation': AAnnotation
+        readonly 'key': string
+    }
+    
+    export namespace AnnotatedKeyReferencePair {
+        
+        export type annotation<AAnnotation, AReferencedType> = AAnnotation
+        
+        export type key<AAnnotation, AReferencedType> = string
+        
+        export type referencedValue<AAnnotation, AReferencedType> = AReferencedType
+    }
+    
+    export type AnnotatedKeyReferencePair<AAnnotation, AReferencedType> = {
+        readonly 'annotation': AAnnotation
+        readonly 'key': string
+        readonly 'referencedValue': AReferencedType
+    }
+    
     export namespace AnnotatedReference {
         
         export type annotation<AAnnotation, AReferencedType> = AAnnotation
@@ -30,33 +57,6 @@ export namespace T {
     export type AnnotatedReference<AAnnotation, AReferencedType> = {
         readonly 'annotation': AAnnotation
         readonly 'referencedValue': AReferencedType
-    }
-    
-    export namespace AnnotatedString {
-        
-        export type annotation<AAnnotation> = AAnnotation
-        
-        export type _lstring<AAnnotation> = string
-    }
-    
-    export type AnnotatedString<AAnnotation> = {
-        readonly 'annotation': AAnnotation
-        readonly 'string': string
-    }
-    
-    export namespace AnnotatedStringReferencePair {
-        
-        export type annotation<AAnnotation, AReferencedType> = AAnnotation
-        
-        export type referencedValue<AAnnotation, AReferencedType> = AReferencedType
-        
-        export type _lstring<AAnnotation, AReferencedType> = string
-    }
-    
-    export type AnnotatedStringReferencePair<AAnnotation, AReferencedType> = {
-        readonly 'annotation': AAnnotation
-        readonly 'referencedValue': AReferencedType
-        readonly 'string': string
     }
     
     export type Boolean = boolean
