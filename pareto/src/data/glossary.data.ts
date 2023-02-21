@@ -13,6 +13,10 @@ import {
     func,
     method,
     type,
+    parametrizedType,
+    member,
+    typeParameter,
+    dictionary,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as mglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -28,6 +32,24 @@ export const $: mglossary.T.Glossary<pd.SourceLocation> = {
         "Number": type(number()),
         "Path": type(nested(string())),
         "String": type(string()),
+        
+        "AnnotatedDictionary": parametrizedType({ "Annotation": {}, "Type": {} }, group({
+            "annotation": member(typeParameter("Annotation")),
+            "dictionary": member(dictionary(typeParameter("Type"))),
+        })),
+        "AnnotatedString": parametrizedType({ "Annotation": {} }, group({
+            "annotation": member(typeParameter("Annotation")),
+            "string": member(string()),
+        })),
+        "AnnotatedReference": parametrizedType({ "Annotation": {}, "ReferencedType": {} }, group({
+            "annotation": member(typeParameter("Annotation")),
+            "referencedValue": member(typeParameter("ReferencedType")),
+        })),
+        "AnnotatedStringReferencePair": parametrizedType({ "Annotation": {}, "ReferencedType": {} }, group({
+            "annotation": member(typeParameter("Annotation")),
+            "string": member(string()),
+            "referencedValue": member(typeParameter("ReferencedType")),
+        })),
     }),
     'interfaces': d({
         "StringStreamConsumer": ['group', {
