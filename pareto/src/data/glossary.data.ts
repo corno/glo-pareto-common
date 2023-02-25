@@ -32,7 +32,6 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "Number": type(number()),
         "Path": type(nested(string())),
         "String": type(string()),
-
         "AnnotatedDictionary": parametrizedType({ "Annotation": {}, "Type": {} }, group({
             "annotation": member(typeParameter("Annotation")),
             "dictionary": member(dictionary(typeParameter("Type"))),
