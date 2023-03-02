@@ -32,19 +32,19 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "Number": type(number()),
         "Path": type(nested(string())),
         "String": type(string()),
-        "AnnotatedDictionary": parametrizedType({ "Annotation": {}, "Type": {} }, group({
+        "AnnotatedDictionary": parametrizedType({ "Annotation": null, "Type": null }, group({
             "annotation": member(typeParameter("Annotation")),
             "dictionary": member(dictionary(typeParameter("Type"))),
         })),
-        "AnnotatedKey": parametrizedType({ "Annotation": {} }, group({
+        "AnnotatedKey": parametrizedType({ "Annotation": null }, group({
             "annotation": member(typeParameter("Annotation")),
             "key": member(string()),
         })),
-        "AnnotatedReference": parametrizedType({ "Annotation": {}, "ReferencedType": {} }, group({
+        "AnnotatedReference": parametrizedType({ "Annotation": null, "ReferencedType": null }, group({
             "annotation": member(typeParameter("Annotation")),
             "referencedValue": member(typeParameter("ReferencedType")),
         })),
-        "AnnotatedKeyReferencePair": parametrizedType({ "Annotation": {}, "ReferencedType": {} }, group({
+        "AnnotatedKeyReferencePair": parametrizedType({ "Annotation": null, "ReferencedType": null }, group({
             "annotation": member(typeParameter("Annotation")),
             "key": member(string()),
             "referencedValue": member(typeParameter("ReferencedType")),
