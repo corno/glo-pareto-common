@@ -51,7 +51,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         })),
     }),
     'builders': d({
-
+        "StringBuilder": builderMethod(typeReference("String")),
     }),
     'interfaces': d({
         "StringStreamConsumer": ['group', {

@@ -11,7 +11,10 @@ export namespace I {
     }
 }
 
-export namespace B {}
+export namespace B {
+    
+    export type StringBuilder = ($: T.String, ) => void
+}
 
 export namespace F {
     
