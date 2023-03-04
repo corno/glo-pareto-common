@@ -1,13 +1,21 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
 
-export type IStringStreamConsumer = {
-    'onData': ($: T.String, ) => void
-    'onEnd': () => void
+export namespace I {}
+
+export namespace B {
+    
+    export type StringStreamConsumer = {
+        'onData': ($: T.String, ) => void
+        'onEnd': () => void
+    }
 }
 
-export type FLog = ($: T.String,) => void
-
-export type FSignal = ($: T.Null,) => void
+export namespace F {
+    
+    export type Log = ($: T.String,) => void
+    
+    export type Signal = ($: T.Null,) => void
+}

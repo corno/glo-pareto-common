@@ -11,7 +11,7 @@ import {
     taggedUnion,
     group,
     func,
-    method,
+    builderMethod,
     type,
     parametrizedType,
     member,
@@ -49,13 +49,15 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "referencedValue": member(typeParameter("ReferencedType")),
         })),
     }),
-    'interfaces': d({
+    'builders': d({
         "StringStreamConsumer": ['group', {
             'members': d({
-                "onData": method(typeReference("String")),
-                "onEnd": method(null),
+                "onData": builderMethod(typeReference("String")),
+                "onEnd": builderMethod(null),
             }),
         }],
+    }),
+    'interfaces': d({
     }),
     'functions': d({
         "Log": func(typeReference("String"), null, null, null),

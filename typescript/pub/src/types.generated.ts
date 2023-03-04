@@ -5,58 +5,58 @@ export namespace T {
     
     export namespace AnnotatedDictionary {
         
-        export type annotation<AAnnotation, AType> = AAnnotation
+        export type annotation<TAnnotation, TType> = TAnnotation
         
         export namespace dictionary {
             
-            export type D<AAnnotation, AType> = AType
+            export type D<TAnnotation, TType> = TType
         }
         
-        export type dictionary<AAnnotation, AType> = pt.Dictionary<AType>
+        export type dictionary<TAnnotation, TType> = pt.Dictionary<TType>
     }
     
-    export type AnnotatedDictionary<AAnnotation, AType> = {
-        readonly 'annotation': AAnnotation
-        readonly 'dictionary': pt.Dictionary<AType>
+    export type AnnotatedDictionary<TAnnotation, TType> = {
+        readonly 'annotation': TAnnotation
+        readonly 'dictionary': pt.Dictionary<TType>
     }
     
     export namespace AnnotatedKey {
         
-        export type annotation<AAnnotation> = AAnnotation
+        export type annotation<TAnnotation> = TAnnotation
         
-        export type key<AAnnotation> = string
+        export type key<TAnnotation> = string
     }
     
-    export type AnnotatedKey<AAnnotation> = {
-        readonly 'annotation': AAnnotation
+    export type AnnotatedKey<TAnnotation> = {
+        readonly 'annotation': TAnnotation
         readonly 'key': string
     }
     
     export namespace AnnotatedKeyReferencePair {
         
-        export type annotation<AAnnotation, AReferencedType> = AAnnotation
+        export type annotation<TAnnotation, TReferencedType> = TAnnotation
         
-        export type key<AAnnotation, AReferencedType> = string
+        export type key<TAnnotation, TReferencedType> = string
         
-        export type referencedValue<AAnnotation, AReferencedType> = AReferencedType
+        export type referencedValue<TAnnotation, TReferencedType> = TReferencedType
     }
     
-    export type AnnotatedKeyReferencePair<AAnnotation, AReferencedType> = {
-        readonly 'annotation': AAnnotation
+    export type AnnotatedKeyReferencePair<TAnnotation, TReferencedType> = {
+        readonly 'annotation': TAnnotation
         readonly 'key': string
-        readonly 'referencedValue': AReferencedType
+        readonly 'referencedValue': TReferencedType
     }
     
     export namespace AnnotatedReference {
         
-        export type annotation<AAnnotation, AReferencedType> = AAnnotation
+        export type annotation<TAnnotation, TReferencedType> = TAnnotation
         
-        export type referencedValue<AAnnotation, AReferencedType> = AReferencedType
+        export type referencedValue<TAnnotation, TReferencedType> = TReferencedType
     }
     
-    export type AnnotatedReference<AAnnotation, AReferencedType> = {
-        readonly 'annotation': AAnnotation
-        readonly 'referencedValue': AReferencedType
+    export type AnnotatedReference<TAnnotation, TReferencedType> = {
+        readonly 'annotation': TAnnotation
+        readonly 'referencedValue': TReferencedType
     }
     
     export type Boolean = boolean
