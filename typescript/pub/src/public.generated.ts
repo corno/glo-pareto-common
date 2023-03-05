@@ -6,8 +6,8 @@ import { T } from './types.generated'
 export namespace I {
     
     export type StringStreamConsumer = {
-        'onData': ($: T.String, ) => void
-        'onEnd': () => void
+        'data': ($: T.String, ) => void
+        'end': () => void
     }
 }
 

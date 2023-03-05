@@ -18,6 +18,7 @@ import {
     typeParameter,
     dictionary,
     interfaceMethod,
+    stream,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -54,12 +55,10 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
         "StringBuilder": builderMethod(typeReference("String")),
     }),
     'interfaces': d({
-        "StringStreamConsumer": ['group', {
-            'members': d({
-                "onData": interfaceMethod(typeReference("String")),
-                "onEnd": interfaceMethod(null),
-            }),
-        }],
+        "StringStreamConsumer": stream(
+            interfaceMethod(typeReference("String")),
+            interfaceMethod(null),
+        ),
     }),
     'functions': d({
         "Log": func(typeReference("String"), null, null, null),
