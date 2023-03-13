@@ -27,6 +27,7 @@ const d = pd.d
 
 export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
+    'imports': d({}),
     'types': d({
         "Boolean": type(boolean()),
         "Null": type(null_()),
