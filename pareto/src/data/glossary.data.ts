@@ -10,7 +10,7 @@ import {
     types,
     taggedUnion,
     group,
-    func,
+    sfunc,
     builderMethod,
     type,
     parametrizedType,
@@ -21,11 +21,11 @@ import {
     stream,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> = {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
     'types': d({
         "Boolean": type(boolean()),
@@ -51,17 +51,21 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "referencedValue": member(typeParameter("ReferencedType")),
         })),
     }),
-    'builders': d({
-        "StringBuilder": builderMethod(typeReference("String")),
-    }),
-    'interfaces': d({
-        "StringStreamConsumer": stream(
-            interfaceMethod(typeReference("String")),
-            interfaceMethod(null),
-        ),
-    }),
-    'functions': d({
-        "Log": func(typeReference("String"), null, null, null),
-        "Signal": func(typeReference("Null"), null, null, null),
-    }),
+    'type': ['synchronous', {
+        'builders': d({
+            "String": builderMethod(typeReference("String")),
+            "Null": builderMethod(typeReference("Null")),
+        }),
+        // 'interfaces': d({
+        //     "StringStreamConsumer": stream(
+        //         interfaceMethod(typeReference("String")),
+        //         interfaceMethod(null),
+        //     ),
+        // }),
+        'functions': d<g_glossary.T.Glossary._ltype.synchronous.functions.D<pd.SourceLocation>>({
+            // "Log": sfunc(typeReference("String"), null, null, null),
+            // "Signal": sfunc(typeReference("Null"), null, null, null),
+        }),
+
+    }],
 }
