@@ -10,4 +10,11 @@ export namespace B {
     export type String = ($: T.String, ) => void
 }
 
+export namespace C {
+    
+    export type Null = ($b: B.Null) => void
+    
+    export type String = ($b: B.String) => void
+}
+
 export namespace F {}
