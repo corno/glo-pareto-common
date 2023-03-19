@@ -7,9 +7,7 @@ export namespace ASYNC {
     
     export namespace I {}
     
-    export namespace C {}
-    
-    export namespace F {}
+    export namespace A {}
 }
 
 export namespace SYNC {
@@ -21,25 +19,12 @@ export namespace SYNC {
         export type String = ($: T.String, ) => void
     }
     
-    export namespace I2 {
+    export namespace IW {
         
-        export type Null = ($b: I.Null) => void
+        export type Null = ($c: ($b: I.Null) => void) => void
         
-        export type String = ($b: I.String) => void
+        export type String = ($c: ($b: I.String) => void) => void
     }
     
-    export namespace I3 {
-        
-        export type Null = ($c: I2.Null) => void
-        
-        export type String = ($c: I2.String) => void
-    }
-    
-    export namespace C {}
-    
-    export namespace C2 {}
-    
-    export namespace C3 {}
-    
-    export namespace F {}
+    export namespace A {}
 }

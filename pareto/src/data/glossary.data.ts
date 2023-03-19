@@ -54,18 +54,13 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         //         interfaceMethod(null),
         //     ),
         }),
-        'constructors': d({}),
-        'functions': d({
-        }),
+        'algorithms': d({}),
     },
     'synchronous': {
         'interfaces': d({
             "String": sInterfaceMethod(typeReference("String")),
             "Null": sInterfaceMethod(typeReference("Null")),
         }),
-        'constructors': d({}),
-        'functions': d({
-        }),
-
+        'algorithms': d({}),
     },
 }
