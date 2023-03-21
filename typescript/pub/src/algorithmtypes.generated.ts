@@ -18,13 +18,4 @@ export namespace SYNC {
         
         export type String = ($: T.String, ) => void
     }
-    
-    export namespace IW {
-        
-        export type Null = ($c: ($b: I.Null) => void) => void
-        
-        export type String = ($c: ($b: I.String) => void) => void
-    }
-    
-    export namespace A {}
 }

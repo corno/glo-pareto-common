@@ -49,7 +49,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-        //     "StringStreamConsumer": stream(
+        //     "StringStreamConsumer": streamconsumer(
         //         interfaceMethod(typeReference("String")),
         //         interfaceMethod(null),
         //     ),
