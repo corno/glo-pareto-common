@@ -14,6 +14,8 @@ import {
     typeParameter,
     dictionary,
     sInterfaceMethod,
+    aInterfaceMethod,
+    streamconsumer,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -49,10 +51,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({
-        //     "StringStreamConsumer": streamconsumer(
-        //         interfaceMethod(typeReference("String")),
-        //         interfaceMethod(null),
-        //     ),
+            "String": aInterfaceMethod(typeReference("String")),
+            "Null": aInterfaceMethod(typeReference("Null")),
+            "StringStream": streamconsumer(
+                aInterfaceMethod(typeReference("String")),
+                aInterfaceMethod(null),
+            ),
         }),
         'algorithms': d({}),
     },
