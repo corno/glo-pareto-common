@@ -16,6 +16,9 @@ import {
     sInterfaceMethod,
     aInterfaceMethod,
     streamconsumer,
+    ref,
+    aInterface,
+    sInterface,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -28,42 +31,43 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'types': d({
         "Boolean": type(boolean()),
         "Null": type(null_()),
+        "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
         "Number": type(number()),
         "Path": type(nested(string())),
         "String": type(string()),
         "AnnotatedDictionary": parametrizedType({ "Annotation": null, "Type": null }, group({
-            "annotation": member(typeParameter("Annotation")),
-            "dictionary": member(dictionary(typeParameter("Type"))),
+            "annotation": member(ref(typeParameter("Annotation"))),
+            "dictionary": member(dictionary(ref(typeParameter("Type")))),
         })),
         "AnnotatedKey": parametrizedType({ "Annotation": null }, group({
-            "annotation": member(typeParameter("Annotation")),
+            "annotation": member(ref(typeParameter("Annotation"))),
             "key": member(string()),
         })),
         "AnnotatedReference": parametrizedType({ "Annotation": null, "ReferencedType": null }, group({
-            "annotation": member(typeParameter("Annotation")),
-            "referencedValue": member(typeParameter("ReferencedType")),
+            "annotation": member(ref(typeParameter("Annotation"))),
+            "referencedValue": member(ref(typeParameter("ReferencedType"))),
         })),
         "AnnotatedKeyReferencePair": parametrizedType({ "Annotation": null, "ReferencedType": null }, group({
-            "annotation": member(typeParameter("Annotation")),
+            "annotation": member(ref(typeParameter("Annotation"))),
             "key": member(string()),
-            "referencedValue": member(typeParameter("ReferencedType")),
+            "referencedValue": member(ref(typeParameter("ReferencedType"))),
         })),
     }),
     'asynchronous': {
         'interfaces': d({
-            "String": aInterfaceMethod(typeReference("String")),
-            "Null": aInterfaceMethod(typeReference("Null")),
-            "StringStream": streamconsumer(
+            "String": aInterface(aInterfaceMethod(typeReference("String"))),
+            "Null": aInterface(aInterfaceMethod(typeReference("Null"))),
+            "StringStream": aInterface(streamconsumer(
                 aInterfaceMethod(typeReference("String")),
                 aInterfaceMethod(null),
-            ),
+            )),
         }),
         'algorithms': d({}),
     },
     'synchronous': {
         'interfaces': d({
-            "String": sInterfaceMethod(typeReference("String")),
-            "Null": sInterfaceMethod(typeReference("Null")),
+            "String": sInterface(sInterfaceMethod(typeReference("String"))),
+            "Null": sInterface(sInterfaceMethod(typeReference("Null"))),
         }),
         'algorithms': d({}),
     },

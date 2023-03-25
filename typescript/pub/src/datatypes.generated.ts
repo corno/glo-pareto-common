@@ -61,6 +61,13 @@ export namespace T {
     
     export type Boolean = boolean
     
+    export namespace Dictionary {
+        
+        export type D<TType> = TType
+    }
+    
+    export type Dictionary<TType> = pt.Dictionary<TType>
+    
     export type Null = null
     
     export type Number = number
