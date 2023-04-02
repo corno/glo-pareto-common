@@ -19,6 +19,9 @@ import {
     ref,
     aInterface,
     sInterface,
+    array,
+    optional,
+    computed,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
 import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
@@ -33,6 +36,10 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'types': d({
             "Boolean": type(boolean()),
             "Null": type(null_()),
+            "Nested": parametrizedType({ "Type": null }, nested(ref(typeParameter("Type")))),
+            "Computed": parametrizedType({ "Type": null }, computed(ref(typeParameter("Type")))),
+            "Optional": parametrizedType({ "Type": null }, optional(ref(typeParameter("Type")))),
+            "Array": parametrizedType({ "Type": null }, array(ref(typeParameter("Type")))),
             "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
             "Number": type(number()),
             "Path": type(nested(string())),

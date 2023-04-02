@@ -61,7 +61,21 @@ export namespace T {
         readonly 'referencedValue': TReferencedType
     }
     
+    export namespace Array {
+        
+        export type A<TType> = TType
+    }
+    
+    export type Array<TType> = pt.Array<TType>
+    
     export type Boolean = boolean
+    
+    export namespace Computed {
+        
+        export type C<TType> = TType
+    }
+    
+    export type Computed<TType> = () => TType
     
     export namespace Dictionary {
         
@@ -70,9 +84,23 @@ export namespace T {
     
     export type Dictionary<TType> = pt.Dictionary<TType>
     
+    export namespace Nested {
+        
+        export type N<TType> = TType
+    }
+    
+    export type Nested<TType> = pt.Nested<TType>
+    
     export type Null = null
     
     export type Number = number
+    
+    export namespace Optional {
+        
+        export type O<TType> = TType
+    }
+    
+    export type Optional<TType> = [ false ] | [ true, TType]
     
     export namespace Path {
         
