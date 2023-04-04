@@ -65,10 +65,15 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     },
     'asynchronous': {
         'interfaces': d({
+            "Number": aInterface(aInterfaceMethod(typeReference("Number"))),
             "String": aInterface(aInterfaceMethod(typeReference("String"))),
             "Null": aInterface(aInterfaceMethod(typeReference("Null"))),
             "StringStream": aInterface(streamconsumer(
                 aInterfaceMethod(typeReference("String")),
+                aInterfaceMethod(null),
+            )),
+            "NumberStream": aInterface(streamconsumer(
+                aInterfaceMethod(typeReference("Number")),
                 aInterfaceMethod(null),
             )),
         }),
@@ -76,6 +81,7 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     },
     'synchronous': {
         'interfaces': d({
+            "Number": sInterface(sInterfaceMethod(typeReference("Number"))),
             "String": sInterface(sInterfaceMethod(typeReference("String"))),
             "Null": sInterface(sInterfaceMethod(typeReference("Null"))),
         }),

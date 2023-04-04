@@ -9,6 +9,13 @@ export namespace ASYNC {
         
         export type Null = ($: T.Null, ) => void
         
+        export type Number = ($: T.Number, ) => void
+        
+        export type NumberStream = {
+            'data': ($: T.Number, ) => void
+            'end': () => void
+        }
+        
         export type String = ($: T.String, ) => void
         
         export type StringStream = {
@@ -25,6 +32,8 @@ export namespace SYNC {
     export namespace I {
         
         export type Null = ($: T.Null, ) => void
+        
+        export type Number = ($: T.Number, ) => void
         
         export type String = ($: T.String, ) => void
     }
