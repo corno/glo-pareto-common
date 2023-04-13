@@ -84,13 +84,6 @@ export namespace T {
     
     export type Dictionary<TType> = pt.Dictionary<TType>
     
-    export namespace Nested {
-        
-        export type N<TType> = TType
-    }
-    
-    export type Nested<TType> = pt.Nested<TType>
-    
     export type Null = null
     
     export type Number = number
@@ -104,10 +97,10 @@ export namespace T {
     
     export namespace Path {
         
-        export type N = string
+        export type A = string
     }
     
-    export type Path = pt.Nested<string>
+    export type Path = pt.Array<string>
     
     export type String = string
 }

@@ -1,7 +1,6 @@
 import * as pd from 'pareto-core-data'
 
 import {
-    nested,
     null_,
     typeReference,
     boolean,
@@ -36,13 +35,12 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         'types': d({
             "Boolean": type(boolean()),
             "Null": type(null_()),
-            "Nested": parametrizedType({ "Type": null }, nested(ref(typeParameter("Type")))),
             "Computed": parametrizedType({ "Type": null }, computed(ref(typeParameter("Type")))),
             "Optional": parametrizedType({ "Type": null }, optional(ref(typeParameter("Type")))),
             "Array": parametrizedType({ "Type": null }, array(ref(typeParameter("Type")))),
             "Dictionary": parametrizedType({ "Type": null }, dictionary(ref(typeParameter("Type")))),
             "Number": type(number()),
-            "Path": type(nested(string())),
+            "Path": type(array(string())),
             "String": type(string()),
             "AnnotatedDictionary": parametrizedType({ "Annotation": null, "Type": null }, group({
                 "annotation": member(ref(typeParameter("Annotation"))),
